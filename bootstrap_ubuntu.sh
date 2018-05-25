@@ -33,14 +33,14 @@ xrandr --output `xrandr | grep " connected" | cut -f 1 -d " "` --mode 1440x900
 # [Install Ansible](http://docs.ansible.com/intro_installation.html).
 if ! command -v ansible >/dev/null; then
   fancy_echo "Installing Ansible ..."
-  sudo apt-get install ansible
+  sudo apt-get install --assume-yes ansible
 else
   fancy_echo "Ansible already installed. Skipping."
 fi
 
 if ! command -v git >/dev/null; then
   fancy_echo "Installing Git ..."
-  sudo apt-get install git
+  sudo apt-get install --assume-yes git
 else
   fancy_echo "Git already installed. Skipping."
 fi
