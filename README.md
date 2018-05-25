@@ -2,7 +2,7 @@
 
 Laptop is a playbook to set up an OS X laptop (for web development).
 
-It installs and configures most of the software Siyelo uses on our Macs for web and software development. 
+It installs and configures most of the software I use on my Macs for software development.
 
 It can be run multiple times on the same machine safely. It installs, upgrades, or skips packages based on what is already installed on the machine.
 
@@ -20,7 +20,9 @@ We've tested it on;
 
 If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/siyelo/laptop/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/install.sh)"
+    or
+    wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh && sh bootstrap_ubuntu.sh
 
 
 You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
@@ -31,9 +33,11 @@ If you want to add/remove to the list of apps/utils installed, its pretty straig
 
 As above, download and bootstrap the script. But stop it before it starts ansible, and edit the playbook as desired, before re-running ansible.
 
-1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `siyelo/laptop` repo locally...
+1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `mjfroman/laptop` repo locally...
 
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/siyelo/laptop/master/install.sh)"
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/install.sh)"
+      or
+      wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh && sh bootstrap_ubuntu.sh
 
 
 1. Stop the script (Ctrl+C) when ansible asks for the a 'sudo' password. 
