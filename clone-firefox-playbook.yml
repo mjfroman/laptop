@@ -1,0 +1,11 @@
+---
+- hosts: all
+
+
+  tasks:
+
+    - name: Clone Firefox repo
+      hg:
+        repo: https://hg.mozilla.org/mozilla-central
+        dest: /home/mfroman/mozilla/moz-central
+
