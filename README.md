@@ -20,7 +20,7 @@ We've tested it on;
 
 If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/boostrap_osx.sh)"
     or
     wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh && sh bootstrap_ubuntu.sh
 
@@ -35,7 +35,7 @@ As above, download and bootstrap the script. But stop it before it starts ansibl
 
 1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `mjfroman/laptop` repo locally...
 
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/install.sh)"
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/boostrap_osx.sh)"
       or
       wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh && sh bootstrap_ubuntu.sh
 
