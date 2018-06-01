@@ -13,6 +13,10 @@
         repo: https://github.com/mozilla/rr.git
         dest: /home/mfroman/rr/rr
 
+    - name: Create directory for firefox builds
+      shell: mkdir -p ~/mozilla/obj/opt ~/mozilla/obj/deb ~/mozilla/obj/debopt ~/mozilla/obj/lin-asan-deb  ~/mozilla/obj/lin-asan-opt ~/mozilla/scratch_user
+      ignore_errors: true
+
     - name: Clone Firefox repo
       hg:
         repo: https://hg.mozilla.org/mozilla-central
