@@ -4,6 +4,15 @@
 
   tasks:
 
+    - name: Create director for rr builds
+      shell: mkdir -p ~/rr/obj
+      ignore_errors: true
+
+    - name: Clone rr repo
+      git:
+        repo: https://github.com/mozilla/rr.git
+        dest: /home/mfroman/rr/rr
+
     - name: Clone Firefox repo
       hg:
         repo: https://hg.mozilla.org/mozilla-central
