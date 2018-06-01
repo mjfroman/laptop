@@ -13,6 +13,16 @@
         repo: https://github.com/mozilla/rr.git
         dest: /home/mfroman/rr/rr
 
+    - name: Clone webrtc samples repo
+      git:
+        repo: https://github.com/webrtc/samples
+        dest: /home/mfroman/git-checkouts/webrtc-samples
+
+    - name: Clone cinnabarify for mozilla git experiment
+      git:
+        repo: https://github.com/sole/cinnabarify.git
+        dest: /home/mfroman/git-checkouts/cinnabarify
+
     - name: Create directory for firefox builds
       shell: mkdir -p ~/mozilla/obj/opt ~/mozilla/obj/deb ~/mozilla/obj/debopt ~/mozilla/obj/lin-asan-deb  ~/mozilla/obj/lin-asan-opt ~/mozilla/scratch_user
       ignore_errors: true
