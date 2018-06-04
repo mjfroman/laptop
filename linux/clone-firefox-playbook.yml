@@ -4,7 +4,12 @@
 
   tasks:
 
-    - name: Create director for rr builds
+    - name: Generate SSH keys
+      shell: ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
+      args:
+        creates: ~/.ssh/id_rsa
+
+    - name: Create directory for rr builds
       shell: mkdir -p ~/rr/obj
       ignore_errors: true
 
