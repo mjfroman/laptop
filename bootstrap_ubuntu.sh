@@ -59,7 +59,7 @@ cd laptop
 # Run this from the same directory as this README file. 
 #fancy_echo "Running ansible playbook ..."
 #ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv 
-(cd linux/ && ./run_playbooks.sh)
+(cd linux/ && bash ./run_playbooks.sh)
 
 # Set some very basic environmental things (term size, dock apps)
 gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Software.desktop', 'update-manager.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'icemon.desktop']"
