@@ -19,7 +19,7 @@
     - name: Add dev packages that mach bootstrap is likely to need
       become: true
       apt:
-        name: autoconf2.13,build-essential,nodejs,python-dev,python-pip,python-setuptools,unzip,uuid,zip
+        name: autoconf2.13,build-essential,nodejs,npm,python-dev,python-pip,python-setuptools,unzip,uuid,zip
         state: present
 
     - name: Add more dev packages that mach bootstrap is likely to need
