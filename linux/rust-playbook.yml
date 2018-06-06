@@ -1,0 +1,21 @@
+---
+- hosts: all
+
+
+  tasks:
+
+    - name: Download rust installer
+      shell: curl https://sh.rustup.rs -sSf > /tmp/install_rust.sh
+      args:
+        creates: /tmp/install_rust.sh
+
+    - name: Install rust
+      shell: sh /tmp/install_rust.sh -y
+      args:
+        creates: ~/.cargo/bin/rustc
+
+    - name: Install sccache for rust builds
+      shell: cargo install sccache
+      args:
+        creates: ~/.cargo/bin/sccache
+
