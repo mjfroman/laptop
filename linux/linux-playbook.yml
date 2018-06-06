@@ -22,6 +22,10 @@
         name: autoconf2.13,build-essential,nodejs,npm,python-dev,python-pip,python-setuptools,unzip,uuid,zip
         state: present
 
+    - name: Upgrade npm to support eslint
+      become: true
+      shell: npm i -g npm
+
     - name: Add more dev packages that mach bootstrap is likely to need
       become: true
       apt:
