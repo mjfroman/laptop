@@ -67,8 +67,8 @@ dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6
 dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/default-size-rows 24
 dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-unlimited true
 
-echo "run: cd laptop && openssl enc -aes-256-cbc -d -in env.enc > get_env2.sh && sh get_env2.sh"
-echo "run: cd mozilla/moz-central && ./mach bootstrap"
-echo "run: cd mozilla/moz-central && ./mach mercurial-setup --update"
-echo "run: cd mozilla/moz-central && ./mach eslint --setup"
+echo "run: source .profile && cd ~/mozilla/moz-central \\"
+echo "     && ./mach mercurial-setup --update \\"
+echo "     && ./mach bootstrap \\"
+echo "     && ./mach eslint --setup"
 
