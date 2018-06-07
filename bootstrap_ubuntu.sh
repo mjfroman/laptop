@@ -64,6 +64,8 @@ cd laptop
 #ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv 
 (cd linux/ && bash ./run_playbooks.sh)
 
+echo "run: scp fromanavc.net:get_env.sh . && sh get_env.sh"
+echo "logout and login to ensure profile changes are picked up."
 echo "run: source .profile && cd ~/mozilla/moz-central \\"
 echo "     && ./mach mercurial-setup --update \\"
 echo "     && ./mach bootstrap \\"
