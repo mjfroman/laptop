@@ -15,7 +15,7 @@
         creates: ~/.cargo/bin/rustc
 
     - name: Install sccache for rust builds
-      shell: cargo install sccache
+      shell: ~/.cargo/bin/cargo install sccache
       args:
         creates: ~/.cargo/bin/sccache
 
