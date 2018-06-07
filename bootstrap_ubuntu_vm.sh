@@ -30,6 +30,8 @@ set -e
 # first thing -  set screen for Ubuntu VM
 xrandr --output `xrandr | grep " connected" | cut -f 1 -d " "` --mode 1440x900
 
+wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh
+
 # then bootstrap as normal
-./bootstrap_ubuntu.sh
+sh ./bootstrap_ubuntu.sh
 
