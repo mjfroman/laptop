@@ -37,6 +37,9 @@ if command -v dconf >/dev/null; then
   dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-unlimited true
 fi
 
+# Update apt-get lists to make sure we find ansible on fresh digital ocean installs
+sudo apt-get update
+
 # [Install Ansible](http://docs.ansible.com/intro_installation.html).
 if ! command -v ansible >/dev/null; then
   fancy_echo "Installing Ansible ..."
