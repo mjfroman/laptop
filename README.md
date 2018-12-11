@@ -20,7 +20,7 @@ We've tested it on;
 
 If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/boostrap_osx.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_osx.sh)"
     or
     wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh && sh bootstrap_ubuntu.sh
     or
@@ -37,7 +37,7 @@ As above, download and bootstrap the script. But stop it before it starts ansibl
 
 1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `mjfroman/laptop` repo locally...
 
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/boostrap_osx.sh)"
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_osx.sh)"
       or
       wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh && sh bootstrap_ubuntu.sh
 
@@ -298,7 +298,7 @@ This project is based off the work of the following folks;
 
 * Eduardo de Oliveira Hernandes' [ansible-macbook](https://github.com/eduardodeoh/ansible-macbook])
 * Jeff Geerlings' [Mac Dev Ansible Playbook](https://github.com/geerlingguy/mac-dev-playbook)
-* [Thoughtbot/laptop](https://github.com/thoughtbot/laptop) (boostrapping, dev tools)
+* [Thoughtbot/laptop](https://github.com/thoughtbot/laptop) (bootstrapping, dev tools)
 * [OSX for Hackers](https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716) (awesome osx tweaks)
 * [Mackup](https://github.com/lra/mackup)  (backup/restore App settings)
 
