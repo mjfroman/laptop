@@ -1,18 +1,15 @@
 #!/bin/sh
 
-# Welcome to the siyelo laptop script!
-# Be prepared to turn your OSX box into
-# a development beast.
+# Welcome to the mjfroman laptop script!
 #
-# This script bootstraps our OSX laptop to a point where we can run
+# This script bootstraps an OSX laptop to a point where we can run
 # Ansible on localhost. It;
 #  1. Installs
 #    - xcode
 #    - homebrew
 #    - ansible (via brew)
-#    - a few ansible galaxy playbooks (zsh, homebrew, cask etc)
 #  2. Kicks off the ansible playbook
-#    - main.yml
+#    - playbook.yml
 #
 # It will ask you for your sudo password
 
@@ -29,33 +26,11 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 set -e
 
-# Here we go.. ask for the administrator password upfront and run a
-# keep-alive to update existing `sudo` time stamp until script has finished
-# sudo -v
-# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 # Ensure Apple's command line tools are installed
-if ! command -v cc >/dev/null; then
-  fancy_echo "Installing xcode ..."
-  xcode-select --install
-else
-  fancy_echo "Xcode already installed. Skipping."
-fi
+(cd scripts && bash ./prep_xcode.sh)
 
-if ! command -v brew >/dev/null; then
-  fancy_echo "Installing Homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
-else
-  fancy_echo "Homebrew already installed. Skipping."
-fi
-
-# [Install Ansible](http://docs.ansible.com/intro_installation.html).
-if ! command -v ansible >/dev/null; then
-  fancy_echo "Installing Ansible ..."
-  brew install ansible
-else
-  fancy_echo "Ansible already installed. Skipping."
-fi
+# Ensure brew and ansible are installed
+(cd scripts && bash ./prep_brew_ansible.sh)
 
 # Clone the repository to your local drive.
 if [ -d "./laptop" ]; then
