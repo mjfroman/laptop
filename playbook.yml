@@ -83,9 +83,6 @@
     brew_taps:
       - caskroom/cask
       - caskroom/versions # for sublime-text3
-      - homebrew/binary
-      - homebrew/dupes # gnu grep
-      - homebrew/versions 
 
     dotfile_repo_username: glennr # the GH repo where your dotfiles are
 
@@ -95,7 +92,6 @@
       - autojump # quickly navigate from cmd line
       - bash # Bash 4
       - boot2docker # for running docker on osx
-      - brew-cask
       - cowsay # amazing
       - coreutils # Install GNU core utilities (those that come with OS X are outdated)
       #- ctags
@@ -149,15 +145,7 @@
 
     - name: Instal required Homebrew Taps
       shell: brew tap {{ item }}
-      with_items: brew_taps
-
-    - name: Check homebrew-cask is installed
-      stat: path=/usr/local/bin/brew-cask.rb
-      register: brew_cask_installed
-
-    - name: Install homebrew-cask
-      shell: brew install brew-cask
-      when: brew_cask_installed.stat.exists == false
+      with_items: "{{ brew_taps }}"
 
     ### UTILS
 
