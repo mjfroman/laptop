@@ -1,0 +1,20 @@
+---
+- hosts: all
+
+
+  tasks:
+
+    - name: Clone webrtc samples repo
+      git:
+        repo: https://github.com/webrtc/samples
+        dest: ~/git-checkouts/webrtc-samples
+
+    - name: Create directory for firefox builds
+      shell: mkdir -p /MozillaBuilds/obj/opt /MozillaBuilds/obj/deb /MozillaBuilds/obj/debopt /MozillaBuilds/scratch_user
+      ignore_errors: true
+
+    - name: Clone Firefox repo
+      hg:
+        repo: https://hg.mozilla.org/mozilla-central
+        dest: ~/mozilla/moz-central
+
