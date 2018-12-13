@@ -10,7 +10,7 @@
         dest: ~/git-checkouts/webrtc-samples
 
     - name: Create directory for firefox builds
-      shell: mkdir -p /MozillaBuilds/obj/opt /MozillaBuilds/obj/deb /MozillaBuilds/obj/debopt /MozillaBuilds/scratch_user
+      shell: mkdir -p /MozillaBuilds/obj/opt /MozillaBuilds/obj/deb /MozillaBuilds/obj/debopt /MozillaBuilds/scratch_user /MozillaBuilds/ccache /MozillaBuilds/sccache
       ignore_errors: true
 
     - name: Clone Firefox repo
