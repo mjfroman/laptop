@@ -32,6 +32,10 @@ if command -v gsettings >/dev/null; then
   gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Software.desktop', 'update-manager.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'icemon.desktop']"
 fi
 if command -v dconf >/dev/null; then
+  # For more info, see: http://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
+  # run this command to get default terminal profile name
+  # dconf list /org/gnome/terminal/legacy/profiles:/
+  # run these commands to set default term size and unlimited scrollback
   dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/default-size-columns 110
   dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/default-size-rows 24
   dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-unlimited true
