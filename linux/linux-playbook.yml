@@ -35,7 +35,7 @@
     - name: Add dev packages that rr is likely to need
       become: true
       apt:
-        name: cmake,make,g++-multilib,gdb,pkg-config,coreutils,python-pexpect,manpages-dev,ninja-build,capnproto,libcapnp-dev
+        name: cmake,make,g++-multilib,gdb,pkg-config,coreutils,python3-pexpect,manpages-dev,ninja-build,capnproto,libcapnp-dev
         state: present
 
     - name: Install Mercurial
