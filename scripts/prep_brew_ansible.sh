@@ -1,18 +1,10 @@
 #!/bin/sh
 
-# Welcome to the siyelo laptop script!
-# Be prepared to turn your OSX box into
-# a development beast.
-#
 # This script bootstraps our OSX laptop to a point where we can run
 # Ansible on localhost. It;
 #  1. Installs
-#    - xcode
 #    - homebrew
 #    - ansible (via brew)
-#    - a few ansible galaxy playbooks (zsh, homebrew, cask etc)
-#  2. Kicks off the ansible playbook
-#    - main.yml
 #
 # It will ask you for your sudo password
 
