@@ -1,0 +1,53 @@
+ack
+arm-none-eabi-gdb
+autoconf
+autoconf@2.13
+coreutils
+dockutil
+fd
+freetype
+gdbm
+gettext
+git
+gmp
+gnu-tar
+icu4c
+jpeg
+libevent
+libffi
+libidn2
+libmpc
+libpng
+libtiff
+libunistring
+libyaml
+llvm
+mpfr
+mtr
+openssl
+openssl@1.1
+pcre
+pcre2
+python
+readline
+ripgrep
+sdl2
+sdl2_image
+sdl2_ttf
+sleepwatcher
+sqlite
+terminal-notifier
+tmux
+wakeonlan
+webp
+wget
+xz
+yasm
+
+MJF-MacBookPro:homebrew-uninstall mfroman$ brew cask list
+acorn                   bonjour-browser         discord                 intel-power-gadget      quicksilver             steam                   xquartz
+adium                   busycal                 dropbox                 istat-menus             rowanj-gitx             superduper
+adoptopenjdk8           chicken                 firefox                 iterm2                  shimo                   time-out
+balenaetcher            chronosync              gfxcardstatus           libreoffice             skype                   visual-studio-code
+bbedit                  diffmerge               google-chrome-canary    lingon-x                sourcetree              wireshark
+
