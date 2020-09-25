@@ -21,7 +21,7 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 set -e
 
 # Ensure Apple's command line tools are installed
-if ! command -v cc >/dev/null; then
+if ! xcode-select -p &>/dev/null; then
   fancy_echo "Installing xcode ..."
   xcode-select --install
 else
