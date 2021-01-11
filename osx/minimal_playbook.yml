@@ -82,20 +82,20 @@
     brew_utils:
       #- ansible #already installed by ./mac bootstrap script
       - ack
-      - autoconf
+      #- autoconf
       #- autojump # quickly navigate from cmd line
       #- bash # Bash 4
       #- boot2docker # for running docker on osx
       #- brew-cask
       #- cowsay # amazing
       - ccache
-      - coreutils # Install GNU core utilities (those that come with OS X are outdated)
+      #- coreutils # Install GNU core utilities (those that come with OS X are outdated)
       #- ctags
       #- docker # | https://docs.docker.com/installation/mac/
       #- dockutil # tool for managing dock items
       #- ffmpeg
       #- findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-      - git
+      #- git
       #- go
       #- gpg
       #- homebrew/dupes/grep # more recent version of OS X grep # ansible bug: https://github.com/ansible/ansible-modules-extras/issues/252

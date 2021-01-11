@@ -4,11 +4,6 @@
 
   tasks:
 
-    - name: Generate SSH keys
-      shell: ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
-      args:
-        creates: ~/.ssh/id_rsa
-
     - name: Create directory for rr builds
       shell: mkdir -p ~/rr/obj
       ignore_errors: true
@@ -22,11 +17,6 @@
       git:
         repo: https://github.com/webrtc/samples
         dest: /home/mfroman/git-checkouts/webrtc-samples
-
-    - name: Clone cinnabarify for mozilla git experiment
-      git:
-        repo: https://github.com/sole/cinnabarify.git
-        dest: /home/mfroman/git-checkouts/cinnabarify
 
     - name: Create directory for firefox builds
       shell: mkdir -p ~/mozilla/obj/opt ~/mozilla/obj/deb ~/mozilla/obj/debopt ~/mozilla/obj/lin-asan-deb  ~/mozilla/obj/lin-asan-opt ~/mozilla/scratch_user
