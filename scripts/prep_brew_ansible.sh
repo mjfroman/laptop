@@ -23,7 +23,7 @@ set -e
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   fancy_echo "Homebrew already installed. Skipping."
 fi
