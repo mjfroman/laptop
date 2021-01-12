@@ -26,9 +26,11 @@
       #- disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
       #- dropbox # a worse Mega Sync
       #- eve # learn your shortcuts
+      - element
       #- evernote 
       #- fing # network diagnostics
-      - firefox 
+      - firefox
+      - homebrew/cask-versions/firefox-nightly
       #- flux # get more sleep
       #- google-chrome
       #- google-drive 
@@ -63,6 +65,7 @@
       #- shuttle # ssh management
       #- skitch 
       #- skype # 
+      - slack
       #- sublime-text3 # (experimental cask) | http://www.sublimetext.com/
       #- subtitles # auto download subtitles 
       #- thunderbird # email
@@ -146,13 +149,13 @@
     # in the future, use http://docs.ansible.com/ansible/latest/homebrew_cask_module.html
 
     - name: Check for installed apps(casks)
-      shell: brew cask list | grep {{ item }}
+      shell: brew list --cask | grep {{ item }}
       register: installed_applications
       with_items: "{{applications}}"
       ignore_errors: true
     
     - name: Install Apps with brew-cask
-      shell: brew cask install {{ item }}
+      shell: brew install --cask {{ item }}
       with_items: "{{applications}}"
       when: "item not in installed_applications.results|map(attribute='stdout')"
 

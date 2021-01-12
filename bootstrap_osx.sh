@@ -26,12 +26,6 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 set -e
 
-# Ensure Apple's command line tools are installed
-(cd scripts && bash ./prep_xcode.sh)
-
-# Ensure brew and ansible are installed
-(cd scripts && bash ./prep_brew_ansible.sh)
-
 # Clone the repository to your local drive.
 if [ -d "./laptop" ]; then
   fancy_echo "Laptop repo dir exists. Removing ..."
@@ -42,6 +36,14 @@ git clone https://github.com/mjfroman/laptop
 
 fancy_echo "Changing to laptop repo dir ..."
 cd laptop
+
+# Ensure brew and ansible are installed
+fancy_echo "Prep brew and ansible"
+(cd scripts && bash ./prep_brew_ansible.sh)
+
+# Ensure Apple's command line tools are installed
+fancy_echo "Prep xcode"
+(cd scripts && bash ./prep_xcode.sh)
 
 # Run this from the same directory as this README file.
 fancy_echo "Running ansible playbook ..."
