@@ -124,10 +124,12 @@
       #- ruby-build
       #- sleepwatcher
       #- sqlite # production rails DB
+      - terminal-notifier
       #- the_silver_searcher # fast ack-grep
       #- tmux
       #- vim
       #- wakeonlan
+      - watchman
       #- wget
       #- zsh
 
