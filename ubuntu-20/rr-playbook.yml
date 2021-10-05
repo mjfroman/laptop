@@ -1,0 +1,30 @@
+---
+- hosts: all
+
+
+  tasks:
+
+    - name: Add line to /etc/sysctl.conf to keep rr happy
+      become: true
+      lineinfile:
+        path: /etc/sysctl.conf
+        regexp: '^kernel.perf_event_paranoid = .$'
+        line: 'kernel.perf_event_paranoid = 1'
+
+    #- name: Setup rr build
+    #  shell: cd ~/obj ; cmake ../rr
+    #  args:
+    #    creates: /tmp/install_rust.sh
+
+    #- name: Build rr
+    #  shell: make -j12
+    #  args:
+    #    creates: ~/.cargo/bin/rustc
+
+    #- name: Install rr
+    #  shell: sudo make install
+    #  args:
+    #    creates: ~/.cargo/bin/sccache
+
+    # add line to /etc/sysctl.conf to keep rr happy, and then reboot to take effect
+    #sudo sed -i '$ a kernel.perf_event_paranoid = 1' /etc/sysctl.conf

@@ -27,18 +27,14 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 set -e
 
-# Set some very basic environmental things (term size, dock apps)
-if command -v gsettings >/dev/null; then
-  gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Software.desktop', 'update-manager.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'icemon.desktop']"
-fi
-if command -v dconf >/dev/null; then
-  # For more info, see: http://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
-  # run this command to get default terminal profile name
-  # dconf list /org/gnome/terminal/legacy/profiles:/
-  # run these commands to set default term size and unlimited scrollback
-  dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/default-size-columns 110
-  dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/default-size-rows 24
-  dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-unlimited true
+UBUNTU_RELEASE=`lsb_release -r | awk '{ print $2; }'`
+if [ "x$UBUNTU_RELEASE" = "x18.04" ]; then
+  ANSIBLE_DIR=ubuntu-18
+elif [ "x$UBUNTU_RELEASE" = "x20.04" ]; then
+  ANSIBLE_DIR=ubuntu-20
+else
+  echo "UBUNTU_RELEASE is not expected ($UBUNTU_RELEASE)"
+  exit
 fi
 
 # Update apt-get lists to make sure we find ansible on fresh digital ocean installs
@@ -70,9 +66,28 @@ git clone https://github.com/mjfroman/laptop
 fancy_echo "Changing to laptop repo dir ..."
 cd laptop
 
+if [ ! -d $ANSIBLE_DIR ]; then
+  echo "No directory is found for $ANSIBLE_DIR"
+  exit
+fi
+
 # Run this from the same directory as this README file. 
 #fancy_echo "Running ansible playbook ..."
-(cd ubuntu-18/ && bash ./run_playbooks.sh)
+(cd $ANSIBLE_DIR/ && bash ./run_playbooks.sh)
+
+# Set some very basic environmental things (term size, dock apps)
+if command -v gsettings >/dev/null; then
+  gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Software.desktop', 'update-manager.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'icemon.desktop']"
+fi
+if command -v dconf >/dev/null; then
+  # For more info, see: http://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
+  # run this command to get default terminal profile name
+  # dconf list /org/gnome/terminal/legacy/profiles:/
+  # run these commands to set default term size and unlimited scrollback
+  dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/default-size-columns 110
+  dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/default-size-rows 24
+  dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-unlimited true
+fi
 
 echo "run: scp fromanavc.net:get_env.sh . && sh get_env.sh"
 echo "logout and login to ensure profile changes are picked up."
