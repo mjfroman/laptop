@@ -72,12 +72,12 @@ if [ ! -d $ANSIBLE_DIR ]; then
 fi
 
 # Run this from the same directory as this README file. 
-#fancy_echo "Running ansible playbook ..."
+fancy_echo "Running ansible playbook ..."
 (cd $ANSIBLE_DIR/ && bash ./run_playbooks.sh)
 
 # Set some very basic environmental things (term size, dock apps)
 if command -v gsettings >/dev/null; then
-  gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Software.desktop', 'update-manager.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'icemon.desktop']"
+  gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Software.desktop', 'update-manager.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop']"
 fi
 if command -v dconf >/dev/null; then
   # For more info, see: http://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
