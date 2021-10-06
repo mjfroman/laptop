@@ -11,12 +11,12 @@
     - name: Clone rr repo
       git:
         repo: https://github.com/mozilla/rr.git
-        dest: /home/mfroman/rr/rr
+        dest: ~/rr/rr
 
     - name: Clone webrtc samples repo
       git:
         repo: https://github.com/webrtc/samples
-        dest: /home/mfroman/git-checkouts/webrtc-samples
+        dest: ~/git-checkouts/webrtc-samples
 
     - name: Create directory for firefox builds
       shell: mkdir -p ~/mozilla/obj/opt ~/mozilla/obj/deb ~/mozilla/obj/debopt ~/mozilla/obj/lin-asan-deb  ~/mozilla/obj/lin-asan-opt ~/mozilla/scratch_user
@@ -25,5 +25,5 @@
     - name: Clone Firefox repo
       hg:
         repo: https://hg.mozilla.org/mozilla-central
-        dest: /home/mfroman/mozilla/moz-central
+        dest: ~/mozilla/moz-central
 
