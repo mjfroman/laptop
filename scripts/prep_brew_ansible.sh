@@ -24,6 +24,10 @@ set -e
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ( grep -q "brew shellenv" ~/.profile || \
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.profile )
+
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   fancy_echo "Homebrew already installed. Skipping."
 fi
