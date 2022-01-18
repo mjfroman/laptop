@@ -50,3 +50,4 @@ fancy_echo "Running ansible playbook ..."
 #ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv
 (cd osx/ && bash ./run_playbooks.sh)
 
+(cd scripts && bash ./show_final_message.sh)

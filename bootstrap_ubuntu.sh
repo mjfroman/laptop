@@ -89,11 +89,4 @@ if command -v dconf >/dev/null; then
   dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-unlimited true
 fi
 
-echo "run: scp fromanavc.net:get_env.sh . && sh get_env.sh"
-echo "logout and login to ensure profile changes are picked up."
-echo "run: source ~/.profile && cd ~/mozilla/moz-central \\"
-echo "     && ./mach vcs-setup --update \\"
-echo "     && ./mach bootstrap \\"
-echo "     && ./mach eslint --setup \\"
-echo "     && switchconfig.sh deb"
-
+(cd scripts && bash ./show_final_message.sh)
