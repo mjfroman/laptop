@@ -10,7 +10,7 @@ source ~/.profile
 ansible-playbook minimal_playbook.yml -i ../hosts -vvvv
 ansible-playbook ../linux/rust-playbook.yml -i ../hosts -vvvv
 source ~/.profile
-ansible-playbook clone-firefox-playbook.yml -i ../hosts -vvvv
+ansible-playbook clone-git-repos-playbook.yml -i ../hosts -vvvv
 
 echo "Done running playbooks"
 
