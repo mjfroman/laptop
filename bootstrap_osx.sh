@@ -20,7 +20,7 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-fancy_echo "Boostrapping ..."
+fancy_echo "Bootstrapping ..."
 
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
