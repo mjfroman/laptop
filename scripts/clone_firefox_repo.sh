@@ -16,8 +16,12 @@ set -e
 CLONE_DIR=~/mozilla
 
 mkdir -p $CLONE_DIR && cd $CLONE_DIR
-curl https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -O && \
-python3 bootstrap.py --application-choice=browser \
-                     --no-interactive \
-                     --no-system-changes && \
-mv mozilla-unified moz-central
+#curl https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -O && \
+#python3 bootstrap.py --application-choice=browser \
+#                     --no-interactive \
+#                     --no-system-changes && \
+##mv mozilla-unified moz-central
+hg clone --stream https://hg.mozilla.org/mozilla-central moz-central
+cd moz-central
+./mach bootstrap --application=browser --no-interactive --no-system-changes
+
