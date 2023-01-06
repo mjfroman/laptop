@@ -19,7 +19,7 @@
     - name: Add dev packages that mach bootstrap is likely to need
       become: true
       apt:
-        name: autoconf2.13,build-essential,nodejs,python-dev,python-pip,python-setuptools,unzip,uuid,zip
+        name: autoconf2.13,build-essential,nodejs,python-dev,python3-pip,python-setuptools,unzip,uuid,zip
         state: present
 
     - name: Add more dev packages that mach bootstrap is likely to need
@@ -35,11 +35,7 @@
         state: present
 
     - name: Install Mercurial
-      pip:
-        name: mercurial
-
-    - name: Install hg-evolve extension
-      pip:
-        name: hg-evolve
-        extra_args: --user
+      shell: pip3 install mercurial
+      args:
+        creates: ~/.local/bin/hg
 

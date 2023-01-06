@@ -23,5 +23,5 @@ mkdir -p $CLONE_DIR && cd $CLONE_DIR
 ##mv mozilla-unified moz-central
 hg clone --stream https://hg.mozilla.org/mozilla-central moz-central
 cd moz-central
-./mach bootstrap --application=browser --no-interactive --no-system-changes
+./mach --no-interactive bootstrap --no-system-changes --application=browser
 

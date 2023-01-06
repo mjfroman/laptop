@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Welcome to the mfroman laptop script!
 # Be prepared to turn your Ubuntu box into 
@@ -61,7 +61,7 @@ if [ -d "./laptop" ]; then
   rm -rf ./laptop/
 fi
 fancy_echo "Cloning laptop repo ..."
-git clone https://github.com/mjfroman/laptop 
+git clone https://github.com/mjfroman/laptop
 
 fancy_echo "Changing to laptop repo dir ..."
 cd laptop
@@ -76,8 +76,11 @@ fancy_echo "Running ansible playbook ..."
 (cd $ANSIBLE_DIR/ && bash ./run_playbooks.sh)
 
 # Set some very basic environmental things (term size, dock apps)
+GNOME_SHELL_SCHEMA=`gsettings list-schemas | grep "oorg.gnome.shell$" | wc -l`
+if [ "x1" = "x$GNOME_SHELL_SCHEMA" ]; then
 if command -v gsettings >/dev/null; then
   gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'org.gnome.Software.desktop', 'update-manager.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop']"
+fi
 fi
 if command -v dconf >/dev/null; then
   # For more info, see: http://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
@@ -90,6 +93,7 @@ if command -v dconf >/dev/null; then
 fi
 
 # Finally, do a "basic" bootstrap and clone of firefox
+source ~/.profile # to pick up mercurial path in ~/.local/bin
 (cd scripts && bash ./clone_firefox_repo.sh)
 
 (cd scripts && bash ./show_final_message.sh)
