@@ -32,6 +32,9 @@ if [ "x$UBUNTU_RELEASE" = "x18.04" ]; then
   ANSIBLE_DIR=ubuntu-18
 elif [ "x$UBUNTU_RELEASE" = "x20.04" ]; then
   ANSIBLE_DIR=ubuntu-20
+elif [ "x$UBUNTU_RELEASE" = "x22.04" ]; then
+  # currently, we can reuse the ubuntu-20 stuff for 22.04
+  ANSIBLE_DIR=ubuntu-20
 else
   echo "UBUNTU_RELEASE is not expected ($UBUNTU_RELEASE)"
   exit
