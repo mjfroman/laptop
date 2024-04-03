@@ -21,7 +21,11 @@ mkdir -p $CLONE_DIR && cd $CLONE_DIR
 #                     --no-interactive \
 #                     --no-system-changes && \
 ##mv mozilla-unified moz-central
-hg clone --stream https://hg.mozilla.org/mozilla-central moz-central
+
+# squelch the mercurial warnings about missing extensions during the clone using empty HGRCPATH
+HGRCPATH="" hg clone --stream https://hg.mozilla.org/mozilla-central moz-central
+
 cd moz-central
-./mach --no-interactive bootstrap --no-system-changes --application=browser
+# squelch the mercurial warnings about missing extensions during the clone using empty HGRCPATH
+HGRCPATH="" ./mach --no-interactive bootstrap --no-system-changes --application=browser
 
