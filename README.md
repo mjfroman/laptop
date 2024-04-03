@@ -22,9 +22,9 @@ If you'd like to start with my default list of tools and apps (see Included Apps
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_osx.sh)"
     or
-    wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh && sh bootstrap_ubuntu.sh
+    wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu.sh && bash bootstrap_ubuntu.sh
     or
-    wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu_vm_on_macos.sh && sh bootstrap_ubuntu_vm_on_macos.sh
+    wget https://raw.githubusercontent.com/mjfroman/laptop/master/bootstrap_ubuntu_vm_on_macos.sh && bash bootstrap_ubuntu_vm_on_macos.sh
 
 
 You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
