@@ -28,8 +28,8 @@ set -e
 
 # Ensure Apple's command line tools are installed - needed for git
 # to get started and then other things.
-fancy_echo "Prep xcode"
-(cd scripts && bash ./prep_xcode.sh)
+fancy_echo "Prep xcode (for git, etc)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/mjfroman/laptop/master/scripts/prep_xcode.sh)"
 
 # Clone the repository to your local drive.
 if [ -d "./laptop" ]; then
