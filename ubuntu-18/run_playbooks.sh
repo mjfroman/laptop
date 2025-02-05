@@ -9,7 +9,7 @@ echo "Running playbooks..."
 set -eEuo pipefail
 
 ansible-playbook linux-playbook.yml -i ../hosts --ask-sudo-pass -vvvv
-ansible-playbook rust-playbook.yml -i ../hosts -vvvv
+ansible-playbook ../rust/rust-playbook.yml -i ../hosts -vvvv
 source ~/.profile
 ansible-playbook clone-git-repos-playbook.yml -i ../hosts -vvvv
 
