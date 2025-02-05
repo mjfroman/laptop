@@ -22,8 +22,16 @@ set -e
 
 # Ensure Apple's command line tools are installed
 if ! xcode-select -p &>/dev/null; then
+  fancy_echo "Look for install app in Dock"
   fancy_echo "Installing xcode ..."
   xcode-select --install
+  /bin/echo -n "Waiting "
+  # Wait until XCode Command Line Tools installation has finished.
+  until $(xcode-select --print-path &> /dev/null); do
+    /bin/echo -n "."
+    sleep 5;
+  done
+  /bin/echo ""
 else
   fancy_echo "Xcode already installed. Skipping."
 fi
