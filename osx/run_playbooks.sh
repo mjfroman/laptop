@@ -9,7 +9,7 @@ echo "Running playbooks..."
 set -eEuo pipefail
 
 # for now we're creating /MozillaBuilds here w/ sudo
-mkdir -p no_tm_backup/MozillaBuilds
+mkdir -p ~/no_tm_backup/MozillaBuilds
 
 source ~/.profile
 
