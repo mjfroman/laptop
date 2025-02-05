@@ -30,7 +30,7 @@
       #- evernote 
       #- fing # network diagnostics
       - firefox
-      - homebrew/cask-versions/firefox-nightly
+      - firefox@nightly
       #- flux # get more sleep
       #- google-chrome
       #- google-drive 
