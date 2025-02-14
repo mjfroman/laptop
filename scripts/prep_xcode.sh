@@ -35,3 +35,6 @@ if ! xcode-select -p &>/dev/null; then
 else
   fancy_echo "Xcode already installed. Skipping."
 fi
+if which xcodebuild &>/dev/null; then
+  sudo xcodebuild -license
+fi
