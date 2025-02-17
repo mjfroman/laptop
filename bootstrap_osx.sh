@@ -7,7 +7,7 @@
 #  1. Installs
 #    - xcode
 #    - homebrew
-#    - ansible (via brew)
+#    - ansible (via pip3)
 #  2. Kicks off the ansible playbook
 #    - playbook.yml
 #
