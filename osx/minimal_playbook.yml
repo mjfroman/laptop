@@ -105,7 +105,7 @@
       #- hub # github
       #- imagemagick # IDK why, but I always end up needing this beast
       #- keybase # in alpha at time of writing.
-      - mercurial # Used to need it for golang src builds. Who knows, might come in handy again.
+      #- mercurial # Used to need it for golang src builds. Who knows, might come in handy again.
       #- mongodb # a shittier PG 
       #- mtr # better traceroute
       #- mysql # required PHP library 
@@ -129,7 +129,7 @@
       #- tmux
       #- vim
       #- wakeonlan
-      - watchman
+      #- watchman
       #- wget
       #- zsh
 
