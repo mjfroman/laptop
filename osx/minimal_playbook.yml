@@ -130,7 +130,7 @@
       #- vim
       #- wakeonlan
       #- watchman
-      #- wget
+      - wget
       #- zsh
 
     home: "{{ lookup('env','HOME') }}"
