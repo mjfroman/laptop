@@ -1,8 +1,8 @@
 # Laptop
 
-Laptop is a playbook to set up an OS X laptop (for web development).
+Laptop is a playbook to set up an OS X laptop (for web development).  Originally macOS-only, it now supports Ubuntu as well.
 
-It installs and configures most of the software I use on my Macs for software development.
+It installs and configures most of the software I use on my Macs and Ubuntu boxes for software development.
 
 It can be run multiple times on the same machine safely. It installs, upgrades, or skips packages based on what is already installed on the machine.
 
@@ -12,6 +12,8 @@ It can be run multiple times on the same machine safely. It installs, upgrades, 
 We've tested it on;
 
 * OS X Yosemite (~10.10.4)
+* macOS Sequoia (15.3)
+* Ubuntu 18/20/22
 
 
 ## Installation
@@ -74,7 +76,6 @@ You can do this as many times as you like and re-run the `ansible-playbook` comm
 Apps installed with Homebrew Cask:
 
   - 1password
-  - alfred # | http://www.alfredapp.com 
   - apptrap # remove associated prefs when uninstalling
   - appzapper # uninstaller
   - bettertouchtool # window snapping. (maybe Moom is more lightweight?)
@@ -177,20 +178,6 @@ It does some reasonably gnarly stuff e.g.
 so you need read it very carefully first. (see scripts/system_settings.sh)
 
 TODO: moar sick settings with https://github.com/ryanmaclean/OSX-Post-Install-Script
-
-
-### User Preferences
-
-It then syncs your user prefs with dotfiles+rcm
-
-It grabs the [thoughttbot/dotfiles](https://github.com/thoughtbot/dotfiles) repo, saves it in `~/src/thoughtbot/dotfiles` and symlinks it to ~/dotfiles. 
-
-It then grabs [glennr/dotfiles](https://github.com/glennr/dotfiles) repo, saves it in `~/src/glennr/dotfiles` and symlinks it to ~/dotfiles-local
-
-You probably want to change the `dotfile_repo_username` variable to match your github username :-)
-
-It then runs rcup to initialize your dotfiles.
-
 
 
 ### MacStore Apps (WIP)
